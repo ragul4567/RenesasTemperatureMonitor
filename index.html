@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renesas Temperature Monitor</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>RENESAS MONITOR</h1>
+      <p>Temperature Intelligence System</p>
+    </div>
+    <span id="connection">DEMO MODE</span>
+  </header>
+
+  <main>
+    <section class="temperature-card">
+      <p>Current Temperature</p>
+      <div class="temperature">
+        <span id="currentTemp">--.-</span><span>°C</span>
+      </div>
+      <p id="status">Waiting for readings...</p>
+    </section>
+
+    <section class="stats">
+      <article class="card">
+        <p>Today's Maximum</p>
+        <h2 id="maxTemp">--.- °C</h2>
+      </article>
+      <article class="card">
+        <p>Today's Minimum</p>
+        <h2 id="minTemp">--.- °C</h2>
+      </article>
+      <article class="card">
+        <p>Stored Readings</p>
+        <h2 id="readingCount">0</h2>
+      </article>
+    </section>
+
+    <section class="card chart-card">
+      <h2>Temperature History</h2>
+      <canvas id="temperatureChart"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>Recent Readings</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Device</th>
+              <th>Temperature</th>
+            </tr>
+          </thead>
+          <tbody id="readingTable">
+            <tr><td colspan="3">Loading readings...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>Renesas Temperature Monitor · Student Project</footer>
+  <script src="script.js"></script>
+</body>
+</html>

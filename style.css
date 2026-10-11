@@ -1,0 +1,158 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #101827;
+  color: #f1f5f9;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 7%;
+  background: #182337;
+  border-bottom: 1px solid #29364b;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 1.5px;
+}
+
+header p, .card p, .temperature-card p {
+  color: #9aabc2;
+}
+
+header p {
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+#connection {
+  font-size: 12px;
+  color: #f5c96a;
+  border: 1px solid #786538;
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+
+main {
+  width: min(1000px, 90%);
+  margin: 32px auto;
+}
+
+.temperature-card {
+  padding: 28px;
+  background: linear-gradient(120deg, #1d3450, #1c293b);
+  border: 1px solid #334a66;
+  border-radius: 16px;
+}
+
+.temperature-card > p:first-child {
+  margin-top: 0;
+}
+
+.temperature {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: clamp(42px, 8vw, 64px);
+  font-weight: bold;
+}
+
+#status {
+  color: #54d6a0;
+  margin-bottom: 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.card {
+  min-width: 0;
+  padding: 22px;
+  background: #1a2638;
+  border: 1px solid #2c3a4f;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.stats .card {
+  margin-bottom: 0;
+}
+
+.stats .card h2 {
+  font-size: 24px;
+  overflow-wrap: anywhere;
+}
+
+.chart-card canvas {
+  max-height: 300px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 13px 10px;
+  border-bottom: 1px solid #2c3a4f;
+  white-space: nowrap;
+}
+
+th {
+  color: #9aabc2;
+  font-size: 13px;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  color: #8191a8;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 20px 5%;
+  }
+
+  header h1 {
+    font-size: 17px;
+  }
+
+  main {
+    width: 92%;
+    margin-top: 20px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .temperature-card, .card {
+    padding: 18px;
+  }
+}
